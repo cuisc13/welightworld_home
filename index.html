@@ -2,51 +2,111 @@
     <head>
             <meta charset="utf-8">
             <link rel="stylesheet" href="asserts/css/style.css">
+            <link rel="stylesheet" href="asserts/icons/css/slate.css">
+            <script src="./asserts/js/stats.js"></script>
+            <style>
+            #aboutus {
+                width: 40%;
+                float: left;
+                height: inherit;
+                padding: 0%;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            .content {
+                height: inherit;
+                overflow: hidden;
+            }
+            .uscontent {
+                margin-top: 17%;
+                width: 45%;
+                float: right;
+            }
+            .footerwrap{
+                background: inherit;
+                color: #B7B7B7;
+            }
+            .footerwrap .footer{
+                width: 100%;
+                margin: 0px auto;
+            }
+            .footerwrap .footer .about{
+                padding: 10px 0px;
+            }
+            .footerwrap .footer .about a{
+                color: #b7b7b7;
+            }
+            .footerwrap .footer .about .spli{
+                display: inline-block;
+                padding: 0px 10px;
+            }
+            .footerwrap .footer .about,.footerwrap .footer p{
+                font-size: 16px;
+                text-align: center;
+                line-height: 2.2em;
+            }
+            .footerwrap .copyright{
+                border-top: 1px solid #b7b7b7;
+                text-align: center;
+                line-height: 58px;
+                margin-top: 15px;
+            }
+            .footerwrap .copyright p{
+                font-size: 16px;
+            }
+            </style>
+
     </head>
     <body>
+        <section id="top">
+            <div id="menu">
+                <a id="toggle" href="#"><i class="icon-menu"></i></a>
+                <ul>
+                    <li><a href="#us">us</a></li>
+                </ul>
+            </div>
             <div id="heading">
                 <div id="logo">We Light World</div>
                 <div id="tagline">一起点亮世界，我们生而为此</div>
             </div>
-            <script>
-                "use strict";
+        </section>
 
-                // Some random colors
-                var colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
+        <section>
+            <div class="content">
+                <h1 id="us">我们怎么来的</h1>
+                <div id="aboutus">
+                    <img class="usimg" src="./asserts/img/mobile.png"></img>
+                </div> 
+                <div class="uscontent">
+                    <p>我们就是这么来的</p>
+                </div>
+            </div>
+        </section>
+        <!-- <section>
+            <div class="content">
+                <h1>我们做什么</h1>
+            </div>
+        </section> -->
 
-                var numBalls = 50;
-                var balls = [];
-
-                for (var i = 0; i < numBalls; i++) {
-                var ball = document.createElement("div");
-                ball.classList.add("ball");
-                ball.style.background = colors[Math.floor(Math.random() * colors.length)];
-                ball.style.left = Math.floor(Math.random() * 100) + "vw";
-                ball.style.top = Math.floor(Math.random() * 100) + "vh";
-                ball.style.transform = "scale(" + Math.random() + ")";
-                ball.style.width = Math.random() + "em";
-                ball.style.height = ball.style.width;
-
-                balls.push(ball);
-                document.body.append(ball);
-                }
-
-                // Keyframes
-                balls.forEach(function (el, i, ra) {
-                var to = {
-                    x: Math.random() * (i % 2 === 0 ? -11 : 11),
-                    y: Math.random() * 12
-                };
-
-                var anim = el.animate([{ transform: "translate(0, 0)" }, { transform: "translate(" + to.x + "rem, " + to.y + "rem)" }], {
-                    duration: (Math.random() + 1) * 2000, // random duration
-                    direction: "alternate",
-                    fill: "both",
-                    iterations: Infinity,
-                    easing: "ease-in-out"
-                });
-                });
-
-            </script>
+        <section>
+            <div class="footerwrap">
+                    <div class="footer">
+                        <div class="about">
+                            <a href="/">关于我们</a>
+                            <span class="spli">|</span>
+                            <a href="/">联系我们</a>
+                        </div>
+                        <!-- <div class="main">
+                            <p>电话：</p>
+                            <p>邮箱：</p>
+                            <p>地址</p>
+                        </div> -->
+                    </div>
+                    <div class="copyright">
+                        <p>Copyright © 2017. welightworld All rights reserved. </p>
+                    </div>
+            </div>
+        </section>
+        <script src="./asserts/js/points.js"></script>
     </body>
 </html>
